@@ -54,11 +54,36 @@ class DonutTile extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
               child: Image.asset(imageName),
-            )
+            ),
 
             //TAREA: TEXTO DEL SABOR DEL PRODUCTO
+            Padding(padding: const EdgeInsets.symmetric(vertical: 5),
+            child: Text(
+              donutFlavor, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
+            ),),
 
             //TAREA: ICONOS DEL "ME ENCANTA"
+            Padding(padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    print("Presionado");
+                  },
+                  child: Icon(Icons.favorite, size: 20,),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("Presionado");
+                  },
+                  child: Text("AGREGAR", style: TextStyle(
+                    decoration: TextDecoration.underline, fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black
+                  ),),
+                )
+              ],
+            ),)
+
 
             //Texto del sabor del producto
 
