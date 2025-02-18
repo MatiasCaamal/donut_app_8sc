@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DonutTile extends StatelessWidget {
+class BurgerTile extends StatelessWidget {
   final String donutFlavor;
   final String donutPrice;
   final dynamic donutColor;
@@ -9,7 +9,7 @@ class DonutTile extends StatelessWidget {
   //Valor fijo del borde circula
   final double borderRadius = 24;
 
-  const DonutTile(
+  const BurgerTile(
       {super.key,
       required this.donutFlavor,
       required this.donutPrice,

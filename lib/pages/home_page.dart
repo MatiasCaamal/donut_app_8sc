@@ -21,23 +21,19 @@ class _HomePageState extends State<HomePage> {
       //donut tab
       const MyTab(
         iconPath: 'lib/icons/donut.png',
+        tabName: 'Donuts',
       ),
       //burger tab
       const MyTab(
         iconPath: 'lib/icons/burger.png',
+        tabName: 'Burger',
       ),
       //smoothie tab
-      const MyTab(
-        iconPath: 'lib/icons/donut.png',
-      ),
+      const MyTab(iconPath: 'lib/icons/donut.png', tabName: 'Smoothie'),
       //pancake tab
-      const MyTab(
-        iconPath: 'lib/icons/pancakes.png',
-      ),
+      const MyTab(iconPath: 'lib/icons/pancakes.png', tabName: 'Pancake'),
       //pizza tab
-      const MyTab(
-        iconPath: 'lib/icons/pizza.png',
-      )
+      const MyTab(iconPath: 'lib/icons/pizza.png', tabName: 'Pizza')
     ];
 
     return DefaultTabController(
@@ -78,7 +74,12 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             // Tab Bar
-            TabBar(tabs: myTabs),
+            TabBar(
+              tabs: myTabs,
+              //Color del texto seleccionado
+              labelColor: Colors.pink,
+              unselectedLabelColor: Colors.grey,
+            ),
 
             // Tab bar view
             Expanded(
@@ -88,9 +89,44 @@ class _HomePageState extends State<HomePage> {
               SmoothieTab(),
               PancakeTab(),
               PizzaTab()
-            ]))
+            ])),
 
             // Carrito
+            Container(
+              color: Colors.white,
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(left: 28),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '2 Items |  \$45',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'Delivery Charges Included',
+                          style: TextStyle(fontSize: 12),
+                        )
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.pink),
+                    child: const Text(
+                      'View Cart',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
